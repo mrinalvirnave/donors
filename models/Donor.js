@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const timestamp = require('mongoose-timestamp')
-const DebtorSchema = new mongoose.Schema({
+const DonorSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -11,7 +11,7 @@ const DebtorSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    debt: {
+    pledge: {
         type: Number,
         required: false,
         default: 0
@@ -22,7 +22,7 @@ const DebtorSchema = new mongoose.Schema({
         default: ''
     }
 });
-DebtorSchema.plugin(timestamp)
+DonorSchema.plugin(timestamp)
 
-const Debtor = mongoose.model('Debtor', DebtorSchema);
-module.exports = Debtor;
+const Donor = mongoose.model('Donor', DonorSchema);
+module.exports = Donor;
