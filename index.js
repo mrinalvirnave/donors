@@ -6,6 +6,7 @@ const server = restify.createServer();
 
 //Middleware
 server.use(restify.plugins.bodyParser())
+server.use(restify.plugins.queryParser());
 
 //Protected Routes
 server.use(rjwt({ secret: config.JWT_SECRET }).unless({ path: ['/api/auth', '/auth/register', '/api/donors/','/api/donors:id'] }));
